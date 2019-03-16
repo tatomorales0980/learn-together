@@ -1,3 +1,3 @@
-Learn Together v.1.0.0
+Learn Together v1.0.1
 
 This application was built to have Native speakers and Non-Native speakers a platform to meet!
