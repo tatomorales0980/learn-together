@@ -42,10 +42,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-<<<<<<< HEAD
     arel (9.0.0)
     ast (2.4.0)
-=======
     bcrypt (3.1.12)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
@@ -69,9 +67,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-<<<<<<< HEAD
     erubi (1.8.0)
-=======
     execjs (2.7.0)
     ffi (1.10.0)
     globalid (0.4.2)
@@ -100,7 +96,6 @@ GEM
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-<<<<<<< HEAD
     parallel (1.14.0)
     parser (2.6.0.0)
       ast (~> 2.4.0)
@@ -127,7 +122,6 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-=======
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
     railties (5.2.2.1)
@@ -141,7 +135,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-<<<<<<< HEAD
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
@@ -154,7 +147,6 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.6)
     ruby-progressbar (1.10.0)
-=======
     sass (3.7.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -186,11 +178,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
-<<<<<<< HEAD
     unicode-display_width (1.5.0)
     warden (1.2.8)
       rack (>= 2.0.6)
-=======
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -206,7 +196,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
-<<<<<<< HEAD
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
@@ -214,13 +203,10 @@ DEPENDENCIES
   pundit
   rails (~> 5.2.2, >= 5.2.2.1)
   rubocop
-=======
   sass-rails (~> 5.0)
   spring
-<<<<<<< HEAD
   sqlite3 (~> 1.3.6)
   turbolinks (~> 5)
-=======
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
