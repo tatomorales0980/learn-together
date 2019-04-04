@@ -1,0 +1,9 @@
+<h5>Languges INDEX</h5>
+<%= link_to 'New', new_language_path %>
+<% @languages.each do |language| %>
+    <div>
+     <%= link_to 'Edit', edit_language_path(language) %>
+     <%= link_to 'Delete', language_remove_path(language), method: :delete %>
+     <%= language.name %>
+    </div>
+<% end %>
