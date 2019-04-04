@@ -1,2 +1,0 @@
-class LearnersController < ApplicationController
-end
