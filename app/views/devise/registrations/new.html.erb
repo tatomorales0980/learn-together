@@ -1,0 +1,96 @@
+<h2>Sign up</h2>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="card border-danger mb-3" style="max-width: 18rem;">
+      <div class="card-header">.:: Security ::.</div>
+      <div class="card-body text-danger">
+        <h5 class="card-title">Security Information</h5>
+        <p class="card-text">
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+
+  <!--Personal Info from new user-->
+  <div class="col-8">
+  <div class="card text-white bg-info mb-3" style="max-width: 50rem;">
+    <div class="card-header">User Information</div>
+    <div class="card-body">  
+      <h5 class="card-title">User</h5>
+        <div>
+             <%= f.label :picture %>
+             <%= f.text_field :picture, autofocus: true %>
+        </div>
+        <div>
+             <%= f.label :first_name %>
+             <%= f.text_field :first_name, autofocus: true %>
+        
+             <%= f.label :last_Name %>
+             <%= f.text_field :last_name, autofocus: true %>
+        </div>
+        <div>
+             <%= f.label :Gender %>
+             <%= f.select :gender,[ 'Female', 'Male', 'Other', 'N/A' ], :prompt => 'Select One', autofocus: true %>
+        </div>   
+        <div>
+             <%= f.label :Age %>
+             <%= f.select :age, options_for_select(18..100), :prompt => "Age" ,autofocus: true %>
+        </div>
+        <div>
+             <%= f.label :Address %>
+             <%= f.text_field :street_address, autofocus: true %>
+        </div> 
+        <div>
+             <%= f.label :City %>
+             <%= f.text_field :city, autofocus: true %>
+
+             <%= f.label :State %>
+             <%= f.text_field :state, autofocus: true %>
+        </div>
+        <div>
+             <%= f.label :Cunytry %>
+             <%= f.text_field :country, autofocus: true %>
+        </div>   
+        <div>
+             <%= f.label :Nationality %>
+             <%= f.text_field :nationality, autofocus: true %>
+        </div>   
+        <div>
+             <%= f.label :About_me %><br />
+             <%= f.text_area :introduction, :cols => 80, :rows => 5, autofocus: true %>
+        </div>
+    </div>
+    <%= f.submit "Sing UP", class: "btn btn-primary" %>
+    <%= render "devise/shared/links" %>
+  </div>  
+</div>  
+<div class="row">
+  <div class="col-2"></div>  
+    <div class="actions">
+      <!--<%= f.submit "Sign up" %>-->
+      <%= f.submit "Sing UP", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

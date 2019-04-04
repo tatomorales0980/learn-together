@@ -10,9 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_000310) do
+ActiveRecord::Schema.define(version: 2019_03_19_225229) do
 
-  create_table "learners", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.string "picture"
     t.string "first_name"
     t.string "last_name"
     t.string "gender"
@@ -22,21 +27,8 @@ ActiveRecord::Schema.define(version: 2019_03_20_000310) do
     t.string "state"
     t.string "country"
     t.string "nationality"
-    t.string "native_language"
-    t.string "interested_language1"
-    t.string "language1_level"
-    t.string "interested_language2"
-    t.string "language2_level"
     t.string "introduction"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
+    t.boolean "disable"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
