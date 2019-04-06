@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 
-
-
 gem 'devise'
 gem 'pundit'
 gem 'rubocop', require: false
 gem 'jquery'
 gem 'jquery-rails'
+gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'geocoder', '~> 1.5', '>= 1.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
