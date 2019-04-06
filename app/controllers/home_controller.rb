@@ -2,7 +2,6 @@ class HomeController < ApplicationController
     before_action :authenticate_user!
     # send back form to create   
     def new
-        @languages = Language.all
     end
     
     # create 
