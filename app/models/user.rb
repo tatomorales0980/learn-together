@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
          
   has_many :messages, :foreign_key => :sender_id
- 
   
-  reverse_geocoded_by :latitude, :longitude
+  reverse_geocoded_by :latitude, :longitude,
+  :address => :location
   after_validation :reverse_geocode
 end

@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @users = User.near([current_user.latitude, current_user.longitude], 3000)
+    @users = User.near([current_user.latitude, current_user.longitude], 2000)
     @messages = Message.all
     @contents = Content.all
   end
