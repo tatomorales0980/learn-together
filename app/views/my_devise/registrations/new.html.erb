@@ -75,23 +75,23 @@
           <%= f.text_field :nationality, autofocus: true %>
         </div>  
         <br />
-        <!--## LANGUAGE USER INFORMATION ## -->
         <div>
           <!--Native Language information-->
           <%= f.label :native_language %>
-          <%= f.select :nativelanguage_id,options_from_collection_for_select(Language.all, 'id', 'name'), prompt: "All Languages", autofocus: true %>
-          <%= f.select 'nativelevel', options_for_select([['Low', '1' ], ['Medium', 2], ['High', 3]], params[:nativelevel].to_i) %>
+          <%= f.select :nativelanguage_id,options_from_collection_for_select(Language.all, 'id', 'name', params[:language_id]), autofocus: true %>
+          <%= select_tag 'nativelevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]]) %>
         </div>
         <div>
           <%= f.label :learn_language %>
-          <%= f.select :learnlanguage_id,options_from_collection_for_select(Language.all, 'id', 'name'), autofocus: true %>
-          <%= f.select 'learninglevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]], params[:learninglevel].to_i) %>
+          <%= f.select :learnlanguage_id,options_from_collection_for_select(Language.all, 'id', 'name', params[:language_id]), autofocus: true %>
+          <%= select_tag 'learninglevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]]) %>
         </div> 
         <div>
           <%= f.label :language_you_speak %>
-          <%= f.select :speaklanguage_id,options_from_collection_for_select(Language.all, 'id', 'name'), autofocus: true %>
-          <%= f.select 'speaklevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]], params[:speaklevel].to_i) %>
+          <%= f.select :speaklanguage_id,options_from_collection_for_select(Language.all, 'id', 'name', params[:language_id]), autofocus: true %>
+          <%= select_tag 'speaklevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]]) %>
         </div>        
+      
         <br />        
         <div>
           <%= f.label :about_me %><br />
