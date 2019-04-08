@@ -5,8 +5,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
          
   has_many :messages, :foreign_key => :sender_id
+
+  def address
+    [street_address, city, state, country].compact.join(', ')
+  end
   
-  reverse_geocoded_by :latitude, :longitude,
-  :address => :location
-  after_validation :reverse_geocode
+  geocoded_by :address
+  after_validation :geocode
+  
+ # reverse_geocoded_by :latitude, :longitude
+ # after_validation :reverse_geocode
+  
+
 end

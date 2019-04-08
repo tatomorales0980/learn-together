@@ -4,56 +4,67 @@
 
 <div class="container">
 <div class="row">
-<div class="col-7">
+<div class="col-8">
   <h3>Messages</h3>
-  <div>
-  <div>
+  <div class="over">
     <% @messages.each do |message| %>
     <% if message.sender_id == current_user.id || message.recipient_id == current_user.id %>
     <% if message.sender_id == current_user.id %>
-      <% recipient = User.find(message.recipient_id) %>
+      <% recipient = message.recipient %>
     <% else %>
-      <% recipient = User.find(message.sender_id) %>
+      <% recipient = message.sender %>
     <% end %>
     <table class="table tsize">
-        <col width="20%">
-        <col width="75%">
+        <col width="25%">
+        <col width="65%">
+        <col width="5%">
         <col width="5%">
         <tr>
           <td><%= recipient.first_name %> <%= recipient.last_name %></td>
-          <td><%= message.contents.last %></td>
+          <td>
+            <% message.contents.each do |content| %>
+                <% if content.equal?(message.contents.last)  %>
+                  <%= content.body %>
+                <% end %>
+            <% end %>
+          </td>
+          <td>
+            <% if !message.unread_content_count(current_user).zero? %>
+              <%= message.unread_content_count(current_user) %>
+            <% end %>
+          <td>
           <td><%= link_to '', message_contents_path(message), :class => "fas fa-pen-nib fa-xm" %></td>
-          <td><%= link_to '', messages_path(message), method: :destroy, :class => "fas fa-trash-alt fa-xm" %></td>
+          <td><%= link_to '', message_path(message), method: :destroy, :class => "fas fa-trash-alt fa-xm" %></td>
         </tr>
     </table>
    <% end %>
   <% end %>
   </div>
- </div>
 </div>
 <div class="col-4">
-  <h3>Matched People</h3>
+  <h3 class="people">Matched People</h3>
   <div class="over">
       <% @users.each do |user| %>
       <% if user.id != current_user.id %>
         <div class="container">
-          <div class="media">
-            <% if user.picture != nil %>
-              <%= img_tag user.picture %>
+          <div class="media border p-3">
+            <% if user.picture == true %>
+              <div>
+                <%= image_tag user.picture %>
+              </div>
             <% else %>
-              <img class="face mr-3 mt-3 rounded-circle" src="https://images.unsplash.com/photo-1508109742312-c7d531211d11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="picture"> 
+              <div>
+                <img class="face mr-3 mt-3 rounded-circle" src="https://images.unsplash.com/photo-1508109742312-c7d531211d11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="picture"> 
+              </div>
             <% end %>
-            <div  class="media-body">
-              <p>
-                Name: <%= user.first_name %> <%= user.last_name %>
-              </p>
-              <p>
-                Distance: <%= user.distance.round(2) %> mile
-              </p>
-              <p>
+            <div  class="media-body d-flex flex-column">
+              <div class= "p-2">
+                <div class="distance text-danger"><strong><%= user.distance.round(1) %> mi</strong></div>
+                <strong><%= user.first_name %> <%= user.last_name %></strong><br>
+                <%= user.email %><br>
                 <%= link_to "", messages_path(sender_id: current_user.id, recipient_id: user.id), method:'post', :class => "fas fa-paper-plane fa-xm" %>
                 <%= link_to "", messages_path(sender_id: current_user.id, recipient_id: user.id), method:'post', :class => "fas fa-search fa-xm" %>
-              </p>
+              </div>
             </div>
           </div>
         </div>

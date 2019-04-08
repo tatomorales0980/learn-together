@@ -1,17 +1,14 @@
 <div class="container">
-  <%= link_to 'Mathed Page', messages_path %>
+  <%= link_to 'Matched Page', messages_path %>
 </div>
 <div class="container jumbotron">
  <% @contents.each do |content| %>
-  <% if content.body %>
-   <% user = User.find(content.user_id) %>
      <div>
-      <strong><%= user.email %></strong> <%= content.content_time %>
+      <strong><%= content.user.first_name %><%= content.user.last_name %></strong> <%= content.content_time %>
      </div>
      <div>
        <%= content.body %>
      </div>
- <% end %>
 <% end %>
 </div>
 <div class="container">

@@ -1,16 +1,14 @@
 class ContentsController < ApplicationController
+  before_action :authenticate_user!
+  
   before_action do
     @message = Message.find(params[:message_id])
   end
   
   def index
     @contents = @message.contents.all
-      if @contents.last
-        if @contents.last.user_id != current_user.id
-          @contents.last.read = true
-        end
-      end
-      
+    @contents.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
+    
     @content = @message.contents.new
   end
   
@@ -21,11 +19,12 @@ class ContentsController < ApplicationController
   def create
     @content = @message.contents.new(content_params)
     if @content.save
+      flash[:notice] = "Successfully Created"
       redirect_to message_contents_path(@message)
     end
   end
   
-private
+  private
   def content_params
     params.require(:content).permit(:body, :user_id)
   end
