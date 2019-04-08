@@ -53,10 +53,10 @@
         </div>   
         <div>
           <%= f.label :age %>
-          <%= f.select :age, options_for_select(18..100), :prompt => "Age" ,autofocus: true %>
+          <%= f.select :age, options_for_select(18..100), :prompt => "age" ,autofocus: true %>
         </div>
         <div>
-          <%= f.label :address %>
+          <%= f.label :street_address %>
           <%= f.text_field :street_address, autofocus: true %>
         </div> 
         <div>
@@ -67,7 +67,7 @@
           <%= f.text_field :state, autofocus: true %>
         </div>
         <div>
-          <%= f.label :cuntry %>
+          <%= f.label :country %>
           <%= f.text_field :country, autofocus: true %>
         </div>   
         <div>
@@ -98,11 +98,9 @@
           <%= f.text_area :introduction, :cols => 80, :rows => 5, autofocus: true %>
         </div>
     </div>
-    
-    <%= f.submit "Sign UP", class: "btn btn-primary" %>
-    <%= render "devise/shared/links" %>
   </div>  
 </div>  
+
 <div class="row">
   <div class="col-2"></div>  
     <div class="actions">
@@ -111,6 +109,7 @@
     </div>
   </div>
 <% end %>
+<br />
 
 <%= render "devise/shared/links" %>
 

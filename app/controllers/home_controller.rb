@@ -2,14 +2,9 @@ class HomeController < ApplicationController
     before_action :authenticate_user!
     # send back form to create   
     def new
-        @hi = "Hola2"
         @languages = Language.all
     end
     
-    def sing_up
-      @languages = Language.all 
-      @hi = 'HOLA2'
-    end    
     # create 
     def create
         @languages = Language.all 

@@ -30,7 +30,7 @@ class LanguagesController < ApplicationController
     end
     
     # delete 
-    def remove
+    def destroy
       language = Language.find(params[:language_id])
       language.destroy
       redirect_to languages_path

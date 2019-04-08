@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   
   resources :languages do
-    delete 'remove'
-    post 'add'
+    delete 'destroy'
   end
   devise_for :users
-  root 'welcome#homepage'
 end
