@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Learntogether</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <%= csrf_meta_tags %>
+    <title>Learn Together</title>
+    
 </head>
 <body>
+    <div class="flex-container">
+        <a class="logo" href="learntogether.html"><?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="200px" height="100px" viewBox="0 0 64 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><g id="Together" transform="matrix(0.518139,0,0,0.651511,-158.38,-132.285)"><text x="352px" y="252px" style="font-family:'Arial-Black', 'Arial Black', sans-serif;font-weight:900;font-size:15.349px;">T</text><text x="363.085px" y="252px" style="font-family:'Arial-Black', 'Arial Black', sans-serif;font-weight:900;font-size:15.349px;">ogether</text></g><g id="LEARN" transform="matrix(0.603693,0,0,0.778964,-172.311,-143.487)"><text x="294.026px" y="213.709px" style="font-family:'Arial-Black', 'Arial Black', sans-serif;font-weight:900;font-size:23.108px;">L<tspan x="309.67px " y="213.709px ">E</tspan></text><text x="326.588px" y="213.709px" style="font-family:'Arial-Black', 'Arial Black', sans-serif;font-weight:900;font-size:23.108px;">A</text><text x="345.949px" y="213.709px" style="font-family:'Arial-Black', 'Arial Black', sans-serif;font-weight:900;font-size:23.108px;">R<tspan x="364.154px " y="213.709px ">N</tspan></text></g><path id="Container" d="M62.183,3.182l0.18,0.034l0.174,0.055l0.167,0.076l0.156,0.095l0.143,0.114l0.129,0.131l0.111,0.145l0.093,0.158l0.073,0.168l0.052,0.175l0.031,0.181l0.008,0.183l-0.001,0.04l-0.001,0.126l-0.001,0.514l-0.003,1.85l-0.002,2.647l-0.001,3.09l0,3.179l0.001,2.916l0.003,2.298l0.002,0.806l0.003,0.52l-0.011,0.188l-0.034,0.185l-0.058,0.179l-0.079,0.171l-0.1,0.16l-0.119,0.146l-0.137,0.129l-0.152,0.112l-0.164,0.091l-0.175,0.071l-0.182,0.047l-0.187,0.025l-0.189,0.001l-0.187,-0.023l-0.182,-0.046l-0.176,-0.068l-0.165,-0.09l-0.153,-0.11l-0.138,-0.128l-0.121,-0.145l-0.102,-0.158l-0.081,-0.17l-0.059,-0.179l-0.036,-0.185l-0.013,-0.188l-0.003,-0.524l-0.002,-0.811l-0.003,-2.301l-0.001,-2.918l0,-3.181l0.001,-3.091l0.002,-2.648l0.002,-1.053l-56.651,0l0.032,2.701l0.101,8.465l0.053,4.452l0.044,3.863l0.017,1.538l0.007,0.723l18.078,0l0.188,0.012l0.185,0.035l0.179,0.058l0.171,0.081l0.159,0.1l0.145,0.121l0.129,0.137l0.11,0.152l0.091,0.165l0.07,0.175l0.046,0.183l0.024,0.187l0,0.188l-0.024,0.187l-0.046,0.182l-0.07,0.176l-0.091,0.165l-0.11,0.152l-0.129,0.137l-0.145,0.12l-0.159,0.101l-0.171,0.081l-0.179,0.058l-0.185,0.035l-0.188,0.012l-19.567,0l-0.187,-0.012l-0.183,-0.034l-0.178,-0.057l-0.169,-0.079l-0.158,-0.099l-0.144,-0.118l-0.129,-0.135l-0.111,-0.15l-0.092,-0.163l-0.07,-0.173l-0.049,-0.18l-0.026,-0.184l-0.003,-0.187l0,0.014l0,-0.012l-0.001,-0.188l-0.006,-0.754l-0.012,-1.18l-0.017,-1.536l-0.044,-3.862l-0.053,-4.452l-0.101,-8.464l-0.034,-2.908l-0.009,-0.884l-0.004,-0.414l0,-0.031l0.011,-0.18l0.033,-0.179l0.054,-0.173l0.074,-0.165l0.094,-0.155l0.111,-0.142l0.128,-0.128l0.143,-0.112l0.155,-0.094l0.165,-0.074l0.173,-0.054l0.178,-0.033l0.181,-0.011l59.67,0l0.183,0.011Z"/></svg></a>
+        <ul class="navigation">
+            <li class="links signup"><a href="#signup">Sign up</a></li>
+            <li class="links signin"><a href="file:///Users/Mbarona/Documents/signin.html">Sign in</a></li>
+        </ul>
+    </div>
 
-<%= yield %>
+    <%= yield %>
 
 </body>
 </html>

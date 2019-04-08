@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :messages, only: [:index, :create, :destroy] do
     resources :contents, only: [:index, :new, :create]
   end
+  
+  root 'welcome#homepage'
 end
