@@ -11,8 +11,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    if Message.between(params[:sender_id], params[:recipient_id]).present?
-      @message = Message.between(params[:sender_id], params[:recipient_id]).first
+    if Message.between(current_user.id, params[:recipient_id]).present?
+      @message = Message.between(current_user.id, params[:recipient_id]).first
     else
       @message = Message.new(message_params)
       @message.save
