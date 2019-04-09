@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-
-
-
 gem 'devise'
 gem 'pundit'
 gem 'rubocop', require: false
 gem 'jquery'
 gem 'jquery-rails'
+
+
+#Active Storage 
+gem "aws-sdk-s3", require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'

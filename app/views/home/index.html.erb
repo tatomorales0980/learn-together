@@ -9,8 +9,11 @@
 
 <% @users.each do |user| %>
     <div>
+        <%= image_tag user.picture, height:50, width:50 %>
         <h5>
             <%= user.first_name %> <%= user.last_name %> <%= user.city %>
         </h5>
+     
+       
     </div>
 <% end %>

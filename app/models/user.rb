@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   belongs_to :nativelanguage, class_name: "Language"
   belongs_to :learnlanguage, class_name: "Language"
   belongs_to :speaklanguage, class_name: "Language"
+  
+  #Active Storage
+  has_one_attached :picture
 end

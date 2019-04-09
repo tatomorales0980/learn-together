@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     # send back form to create   
     def new
         @languages = Language.all
+        
     end
     
     # create 
@@ -14,10 +15,12 @@ class HomeController < ApplicationController
     def index
         @users = User.all
         @languages = Language.all
+        
     end
     
     # send back to edit
     def edit
+
     end
     
     # update 
