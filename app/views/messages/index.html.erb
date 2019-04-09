@@ -18,7 +18,6 @@
         <col width="25%">
         <col width="65%">
         <col width="5%">
-        <col width="5%">
         <tr>
           <td><%= recipient.first_name %> <%= recipient.last_name %></td>
           <td>
@@ -28,13 +27,8 @@
                 <% end %>
             <% end %>
           </td>
-          <td>
-            <% if !message.unread_content_count(current_user).zero? %>
-              <%= message.unread_content_count(current_user) %>
-            <% end %>
-          <td>
           <td><%= link_to '', message_contents_path(message), :class => "fas fa-pen-nib fa-xm" %></td>
-          <td><%= link_to '', message_path(message), method: :destroy, :class => "fas fa-trash-alt fa-xm" %></td>
+          <td><%= link_to '', message_path(message), method: :delete, :class => "fas fa-trash-alt fa-xm" %></td>
         </tr>
     </table>
    <% end %>
@@ -46,7 +40,6 @@
   <div class="over">
       <% @users.each do |user| %>
       <% if user.id != current_user.id %>
-        <div class="container">
           <div class="media border p-3">
             <% if user.picture == true %>
               <div>
@@ -67,7 +60,6 @@
               </div>
             </div>
           </div>
-        </div>
       <% end %>
      <% end %>
     </div>

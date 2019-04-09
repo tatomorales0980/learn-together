@@ -7,19 +7,19 @@ class MessagesController < ApplicationController
   end
   
   def create
-    if Message.includes(current_user.id)
+    if Message.between(params[:sender_id], params[:recipient_id]).present?
       @message = Message.between(params[:sender_id], params[:recipient_id]).first
-      redirect_to message_contents_path(@message)
     else
       @message = Message.create(message_params)
-      redirect_to message_contents_path(@message)
     end
+    
+    redirect_to message_contents_path(@message)
   end
   
   def destroy
-    message = Message.find(params[:message_id])
+    message = Message.find(params[:id])
     message.destroy
-    redirect_to message_path(message)
+    redirect_to messages_path
   end
   
 private

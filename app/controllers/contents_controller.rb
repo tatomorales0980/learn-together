@@ -7,7 +7,6 @@ class ContentsController < ApplicationController
   
   def index
     @contents = @message.contents.all
-    @contents.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
     
     @content = @message.contents.new
   end
@@ -19,7 +18,6 @@ class ContentsController < ApplicationController
   def create
     @content = @message.contents.new(content_params)
     if @content.save
-      flash[:notice] = "Successfully Created"
       redirect_to message_contents_path(@message)
     end
   end
