@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   
-  resources :messages, only: [:index, :create, :destroy] do
+  resources :messages, only: [:index, :new, :create, :destroy] do
     resources :contents, only: [:index, :new, :create]
   end
   

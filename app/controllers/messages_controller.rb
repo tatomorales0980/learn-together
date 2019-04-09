@@ -6,11 +6,16 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
   
+  def new
+    @message = Message.new
+  end
+
   def create
     if Message.between(params[:sender_id], params[:recipient_id]).present?
       @message = Message.between(params[:sender_id], params[:recipient_id]).first
     else
-      @message = Message.create(message_params)
+      @message = Message.new(message_params)
+      @message.save
     end
     
     redirect_to message_contents_path(@message)
