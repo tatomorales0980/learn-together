@@ -4,5 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :languages
+  belongs_to :nativelanguage, class_name: "Language"
+  belongs_to :learnlanguage, class_name: "Language"
+  belongs_to :speaklanguage, class_name: "Language"
 end
