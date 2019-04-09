@@ -56,7 +56,7 @@
                 <strong><%= user.first_name %> <%= user.last_name %></strong><br>
                 <%= user.email %><br>
                 <%= link_to "", messages_path(sender_id: current_user.id, recipient_id: user.id), method:'post', :class => "fas fa-paper-plane fa-xm" %>
-                <%= link_to "", messages_path(sender_id: current_user.id, recipient_id: user.id), method:'post', :class => "fas fa-search fa-xm" %>
+                <%= link_to "", match_path(user), :class => "fas fa-search fa-xm" %>
               </div>
             </div>
           </div>
