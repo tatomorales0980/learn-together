@@ -1,0 +1,28 @@
+<div class="container">
+  <%= link_to 'Matched Page', messages_path %>
+</div>
+
+
+<div class="container jumbotron">
+ <% @contents.each do |content| %>
+     <div>
+      <strong><%= content.user.first_name %><%= content.user.last_name %></strong> <%= content.content_time %>
+     </div>
+     <div>
+       <%= content.body %>
+     </div>
+<% end %>
+</div>
+<div class="container">
+<%= form_for [@message, @content] do |f| %>
+ <div class="form-group">
+   <%= f.text_area :body, :class => "form-control"%>
+ </div>
+ <div class="form-group">
+  <%= f.text_field :user_id, value: current_user.id, type: "hidden", :class => "form-control" %>
+ </div>
+ <div class="form-group">
+   <%= f.submit "Reply", :class => "btn btn-primary form-control" %>
+ </div>
+<% end %>
+</div>
