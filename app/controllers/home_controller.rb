@@ -31,9 +31,5 @@ class HomeController < ApplicationController
     
     def matches
         @matches = User.all
-        
     end
-        
-
-    
 end
