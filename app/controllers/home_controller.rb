@@ -25,6 +25,11 @@ class HomeController < ApplicationController
     end
    
    #Show the students related with the class 
-    def show    
+    def show 
+        @user = User.find(params[:id])
+    end
+    
+    def matches
+        @matches = User.all
     end
 end

@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   end
   
   root 'welcome#homepage'
+  
+  get '/users/:id/matches', to: 'home#matches'
+  
+  
 end
