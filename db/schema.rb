@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_04_09_175712) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -34,8 +33,26 @@ ActiveRecord::Schema.define(version: 2019_04_09_175712) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "contents", force: :cascade do |t|
+    t.string "body"
+    t.integer "message_id"
+    t.integer "user_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_contents_on_message_id"
+    t.index ["user_id"], name: "index_contents_on_user_id"
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,24 +68,6 @@ ActiveRecord::Schema.define(version: 2019_04_09_175712) do
     t.integer "user_id"
     t.integer "language_id"
     t.integer "level"
-=======
-ActiveRecord::Schema.define(version: 2019_04_06_002355) do
-
-  create_table "contents", force: :cascade do |t|
-    t.string "body"
-    t.integer "message_id"
-    t.integer "user_id"
-    t.boolean "read", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["message_id"], name: "index_contents_on_message_id"
-    t.index ["user_id"], name: "index_contents_on_user_id"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
->>>>>>> master
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
