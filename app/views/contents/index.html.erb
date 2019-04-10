@@ -1,9 +1,14 @@
 <div class="container">
   <%= link_to 'Matched Page', messages_path %>
 </div>
+<div class="container">
+ <% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+ <% end %>
+</div>
 
-
-<div class="container jumbotron">
+<div class="container">
+ <div class="jumbotron content-box">
  <% @contents.each do |content| %>
      <div>
       <strong><%= content.user.first_name %><%= content.user.last_name %></strong> <%= content.content_time %>
@@ -12,6 +17,7 @@
        <%= content.body %>
      </div>
 <% end %>
+</div>
 </div>
 <div class="container">
 <%= form_for [@message, @content] do |f| %>
