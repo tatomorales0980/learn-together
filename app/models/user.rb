@@ -10,4 +10,12 @@ class User < ActiveRecord::Base
   
   #Active Storage
   has_one_attached :picture
+  
+  def address
+    [street_address, city, state, country].compact.join(', ')
+  end
+  
+  geocoded_by :address
+  after_validation :geocode
+  
 end

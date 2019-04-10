@@ -19,7 +19,7 @@
         <col width="65%">
         <col width="5%">
         <tr>
-          <td><%= recipient.first_name %><%= recipient.last_name %></td>
+          <td><strong><%= recipient.first_name %> <%= recipient.last_name %></strong></td>
           <td>
             <% message.contents.each do |content| %>
                 <% if content.equal?(message.contents.last)  %>
@@ -40,6 +40,8 @@
   <div class="over">
       <% @users.each do |user| %>
       <% if user.id != current_user.id %>
+        <% if user.nativelanguage_id == current_user.learnlanguage_id || user.speaklanguage_id == current_user.learnlanguage_id %>
+          <% if user.speaklevel > current_user.learninglevel %>
           <div class="media border p-3">
             <% if user.picture == true %>
               <div>
@@ -54,12 +56,19 @@
               <div class= "p-2">
                 <div class="distance text-danger"><strong><%= user.distance.round(1) %> mi</strong></div>
                 <strong><%= user.first_name %> <%= user.last_name %></strong><br>
-                <%= user.email %><br>
+                <% if user.nativelanguage_id == current_user.learnlanguage_id %>
+                  Native: <%= user.nativelanguage.name %> <br>
+                <% elsif user.speaklanguage_id == current_user.learnlanguage_id %>
+                  Speak: <%= user.speaklanguage.name %>, Level: <%= user.speaklevel %><br>
+                <% end %>
+                
                 <%= link_to "", messages_path(sender_id: current_user.id, recipient_id: user.id), method:'post', :class => "fas fa-paper-plane fa-xm" %>
                 <%= link_to "", match_path(user), :class => "fas fa-search fa-xm" %>
               </div>
             </div>
           </div>
+          <% end %>
+        <% end %>
       <% end %>
      <% end %>
     </div>
