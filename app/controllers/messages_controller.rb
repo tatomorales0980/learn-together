@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
     else
       @message = Message.new(message_params)
       @message.save
+      flash[:notice] = "Start A New Message"
     end
     
     redirect_to message_contents_path(@message)
