@@ -1,0 +1,15 @@
+<h1>Welcome to Home <%= current_user.email %></h1>
+<%= link_to 'Edit Profile', edit_user_registration_path %>
+<br/>
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<br />
+<%= link_to 'New Language', new_language_path %>
+
+
+<% @users.each do |user| %>
+    <div>
+        <h5>
+            <%= user.first_name %> <%= user.last_name %> <%= user.city %>
+        </h5>
+    </div>
+<% end %>

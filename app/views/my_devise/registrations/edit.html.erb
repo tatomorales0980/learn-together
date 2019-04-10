@@ -37,9 +37,9 @@
     <div class="card-header">User Information</div>
     <div class="card-body">  
       <h5 class="card-title">User</h5>
-        <div class="field">
-          <%= f.label :picture %>
-          <%= f.file_field :picture %>
+        <div>
+             <%= f.label :picture %>
+             <%= f.text_field :picture, autofocus: true %>
         </div>
         <div>
              <%= f.label :first_name %>
@@ -54,10 +54,10 @@
         </div>   
         <div>
              <%= f.label :age %>
-             <%= f.select :age, options_for_select(18..100), :prompt => "age" ,autofocus: true %>
+             <%= f.select :age, options_for_select(18..100), :prompt => "Age" ,autofocus: true %>
         </div>
         <div>
-             <%= f.label :street_address %>
+             <%= f.label :address %>
              <%= f.text_field :street_address, autofocus: true %>
         </div> 
         <div>
@@ -68,32 +68,32 @@
              <%= f.text_field :state, autofocus: true %>
         </div>
         <div>
-             <%= f.label :country %>
+             <%= f.label :cuntry %>
              <%= f.text_field :country, autofocus: true %>
         </div>   
         <div>
              <%= f.label :nationality %>
              <%= f.text_field :nationality, autofocus: true %>
         </div> 
-        <!--## LANGUAGE USER INFORMATION ## -->
+        <!--user Language information-->
         <div>
-          <!--Native Language information-->
-          <%= f.label :native_language %>
-          <%= f.select :nativelanguage_id, options_from_collection_for_select(Language.all, 'id', 'name', resource.nativelanguage_id), autofocus: true %>
-          <%= f.select 'nativelevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]], resource.nativelevel) %>
-        </div>
-        <div>
-          <%= f.label :learn_language %>
-          <%= f.select :learnlanguage_id,options_from_collection_for_select(Language.all, 'id', 'name',resource.learnlanguage_id), autofocus: true %>
-          <%= f.select 'learninglevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]], resource.learninglevel) %>
-        </div> 
-        <div>
-          <%= f.label :language_you_speak %>
-          <%= f.select :speaklanguage_id,options_from_collection_for_select(Language.all, 'id', 'name',resource.speaklanguage_id), autofocus: true %>
-          <%= f.select 'speaklevel', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]], resource.speaklevel) %>
+          <%= f.label :nativelanguage %>
+          <%= f.select :nativelanguage,options_from_collection_for_select(Language.all, 'id', 'name', params[:language_id]), autofocus: true %>          
+          Native Language
+          <%= select_tag 'Language', options_from_collection_for_select(Language.all, 'id', 'name', params[:language_id]) %>
+          <%= select_tag 'native_level', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]]) %>
+          
         </div>        
-        <br />        
-        <div>        
+        <div>
+          Language that you speak
+          <%= select_tag 'Language', options_from_collection_for_select(Language.all, 'id', 'name', params[:language_id]) %>
+          <%= select_tag 'speak_level', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]]) %>          
+        </div>        
+        <div>
+          Language that do want to learn
+          <%= select_tag 'Language', options_from_collection_for_select(Language.all, 'id', 'name', params[:language_id]) %>
+          <%= select_tag 'learn_level', options_for_select([['Low', 1 ], ['Medium', 2], ['High', 3]]) %>
+        </div>          
         <div>
              <%= f.label :about_me %><br />
              <%= f.text_area :introduction, :cols => 80, :rows => 5, autofocus: true %>
