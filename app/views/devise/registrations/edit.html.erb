@@ -37,9 +37,9 @@
     <div class="card-header">User Information</div>
     <div class="card-body">  
       <h5 class="card-title">User</h5>
-        <div>
-             <%= f.label :picture %>
-             <%= f.text_field :picture, autofocus: true %>
+        <div class="field">
+          <%= f.label :picture %>
+          <%= f.file_field :picture %>
         </div>
         <div>
              <%= f.label :first_name %>
