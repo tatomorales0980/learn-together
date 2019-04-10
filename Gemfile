@@ -6,6 +6,8 @@ gem 'pundit'
 gem 'rubocop', require: false
 gem 'jquery'
 gem 'jquery-rails'
+gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'geocoder', '~> 1.5', '>= 1.5.1'
 
 
 #Active Storage 

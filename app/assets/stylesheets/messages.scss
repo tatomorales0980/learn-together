@@ -1,0 +1,31 @@
+// Place all the styles related to the Messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.people {
+  text-align: center;
+}
+.face {
+  width: 50px;
+  height: 50px;
+}
+
+.tsize {
+  text-align: left;
+}
+.over {
+  height: 400px;
+  overflow-y: scroll;
+}
+.media {
+  margin-bottom: 5px;
+}
+
+.media-body {
+  font-size: 0.8em;
+}
+.distance {
+  font-size: 0.7em;
+  float: right;
+}
+
