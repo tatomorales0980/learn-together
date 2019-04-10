@@ -11,7 +11,7 @@
  <div class="jumbotron content-box">
  <% @contents.each do |content| %>
      <div>
-      <strong><%= content.user.first_name %><%= content.user.last_name %></strong> <%= content.content_time %>
+      <p><strong><%= content.user.first_name %> <%= content.user.last_name %></strong><%= content.content_time %></p>
      </div>
      <div>
        <%= content.body %>

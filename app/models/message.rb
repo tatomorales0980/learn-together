@@ -9,5 +9,7 @@ class Message < ApplicationRecord
   scope :between, -> (user_one, user_two) do
     where("(messages.sender_id = ? AND messages.recipient_id =?) OR (messages.sender_id = ? AND messages.recipient_id =?)", user_one, user_two, user_two, user_one)
   end
+  
+
 
 end

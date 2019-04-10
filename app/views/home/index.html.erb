@@ -7,14 +7,7 @@
  - 
 <%= link_to 'View User', new_language_path, class: "btn btn-outline-warning" %>
 
-<% @users.each do |user| %>
-    <div>
-        <%= image_tag user.picture, height:50, width:50 %>
-        <h5>
-            <%= user.first_name %> <%= user.last_name %> <%= user.city %>
-        </h5>
-    </div>
-<% end %>
+
 <div>
  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 </div>
