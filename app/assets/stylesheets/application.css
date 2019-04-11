@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .loginform {
+   margin: auto;
+   text-align: center;
+   width: 50%
+ }
