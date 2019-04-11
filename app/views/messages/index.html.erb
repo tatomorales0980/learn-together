@@ -1,10 +1,4 @@
 <div class="container">
-  <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-outline-warning" %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
-  <%= link_to 'New Language', new_language_path, class: "btn btn-outline-warning" %>
-</div>
-
-<div class="container">
 <div class="row">
 <div class="col-8">
   <h3>Messages</h3>
@@ -47,7 +41,7 @@
           <div class="media border p-3">
             <% if user.picture == true %>
               <div>
-                <%= image_tag user.picture %>
+                <%= image_tag user.picture, :class => "face mr-3 mt rounded-circle" %>
               </div>
             <% else %>
               <div>
