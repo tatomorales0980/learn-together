@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :posts
-  root 'home#index'
+  
+  #root 'messages#index'
+  root 'welcome#homepage'
   
   # devise_for :users, :controllers => {:registrations => "my_devise/registrations"}
   

@@ -1,5 +1,7 @@
 <div class="container">
-  <%= link_to 'Home', root_path %>
+  <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-outline-warning" %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
+  <%= link_to 'New Language', new_language_path, class: "btn btn-outline-warning" %>
 </div>
 
 <div class="container">
