@@ -19,6 +19,7 @@ class HomeController < ApplicationController
    #Show the students related with the class 
     def show 
         @user = User.find(params[:id])
+        redirect_to post_path
     end
     
     def matches
