@@ -1,5 +1,7 @@
 <div class="container">
-  <%= link_to 'Home', root_path %>
+  <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-outline-warning" %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
+  <%= link_to 'New Language', new_language_path, class: "btn btn-outline-warning" %>
 </div>
 
 <div class="container">
@@ -19,7 +21,7 @@
         <col width="65%">
         <col width="5%">
         <tr>
-          <td><%= recipient.first_name %><%= recipient.last_name %></td>
+          <td><strong><%= recipient.first_name %> <%= recipient.last_name %></strong></td>
           <td>
             <% message.contents.each do |content| %>
                 <% if content.equal?(message.contents.last)  %>
@@ -40,6 +42,8 @@
   <div class="over">
       <% @users.each do |user| %>
       <% if user.id != current_user.id %>
+        <% if user.nativelanguage_id == current_user.learnlanguage_id || user.speaklanguage_id == current_user.learnlanguage_id %>
+          <% if user.speaklevel > current_user.learninglevel %>
           <div class="media border p-3">
             <% if user.picture == true %>
               <div>
@@ -47,19 +51,26 @@
               </div>
             <% else %>
               <div>
-                <img class="face mr-3 mt-3 rounded-circle" src="https://images.unsplash.com/photo-1508109742312-c7d531211d11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="picture"> 
+                <img class="face mr-3 mt-3 rounded-circle" src="https://images.unsplash.com/photo-1508109742312-c7d531211d11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="picture">
               </div>
             <% end %>
             <div  class="media-body d-flex flex-column">
               <div class= "p-2">
                 <div class="distance text-danger"><strong><%= user.distance.round(1) %> mi</strong></div>
                 <strong><%= user.first_name %> <%= user.last_name %></strong><br>
-                <%= user.email %><br>
+                <% if user.nativelanguage_id == current_user.learnlanguage_id %>
+                  Native: <%= user.nativelanguage.name %> <br>
+                <% elsif user.speaklanguage_id == current_user.learnlanguage_id %>
+                  Speak: <%= user.speaklanguage.name %>, Level: <%= user.speaklevel %><br>
+                <% end %>
+                
                 <%= link_to "", messages_path(sender_id: current_user.id, recipient_id: user.id), method:'post', :class => "fas fa-paper-plane fa-xm" %>
                 <%= link_to "", match_path(user), :class => "fas fa-search fa-xm" %>
               </div>
             </div>
           </div>
+          <% end %>
+        <% end %>
       <% end %>
      <% end %>
     </div>
