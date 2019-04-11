@@ -1,13 +1,16 @@
-<div class="container">
-  <%= link_to 'Matched Page', messages_path %>
+<div class="container box">
+  <div class="btn btn-primary btn-sm">
+   <%= link_to 'Back', messages_path %>
+  </div>
 </div>
-<div class="container">
+<br>
+<div class="container box">
  <% if flash[:notice] %>
   <div class="alert alert-success"><%= flash[:notice] %></div>
  <% end %>
 </div>
 
-<div class="container">
+<div class="container box">
  <div class="jumbotron content-box">
  <% @contents.each do |content| %>
      <div>
@@ -19,7 +22,7 @@
 <% end %>
 </div>
 </div>
-<div class="container">
+<div class="container box">
 <%= form_for [@message, @content] do |f| %>
  <div class="form-group">
    <%= f.text_area :body, :class => "form-control"%>
