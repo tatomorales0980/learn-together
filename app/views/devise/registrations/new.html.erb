@@ -6,9 +6,9 @@
   <div class="col-3">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="card border-danger mb-3" style="max-width: 18rem;">
-      <div class="card-header">.:: Security ::.</div>
-      <div class="card-body text-danger">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">Security</div>
+      <div class="card-body">
         <h5 class="card-title">Security Information</h5>
         <p class="card-text">
         <div class="field">
@@ -33,10 +33,10 @@
 
   <!--Personal Info from new user-->
   <div class="col-8">
-  <div class="card text-white bg-info mb-3" style="max-width: 50rem;">
+  <div class="card text-white bg-dark mb-3" style="max-width: 50rem;">
     <div class="card-header">User Information</div>
     <div class="card-body">  
-      <h5 class="card-title">User</h5>
+      <h5 class="card-title, row justify-content-center">.:: Learn together user information ::.</h5>
         <div class="field">
           <%= f.label :picture %>
           <%= f.file_field :picture %>
@@ -98,20 +98,23 @@
           <%= f.label :about_me %><br />
           <%= f.text_area :introduction, :cols => 80, :rows => 5, autofocus: true %>
         </div>
+        <br />
+        <div>
+          <%= f.submit "Sign UP", class: "btn btn-success" %>
+        </div>
     </div>
   </div>  
 </div>  
 
-<div class="row">
-  <div class="col-2"></div>  
-    <div class="actions">
-      <!--<%= f.submit "Sign up" %>-->
-      <%= f.submit "Sign UP", class: "btn btn-primary" %>
-    </div>
-  </div>
+<!--<div class="row">-->
+<!--  <div class="col-2"></div>  -->
+<!--    <div class="actions">-->
+<!--      <%= f.submit "Sign UP", class: "btn btn-success" %>-->
+<!--    </div>-->
+<!--  </div>-->
 <% end %>
-<br />
-
-<%= render "devise/shared/links" %>
-
-</div>
+<!--<br />-->
+<!--<div>-->
+<!--<b><%= render "devise/shared/links" %></b>-->
+<!--</div>-->
+<!--</div>-->
